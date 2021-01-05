@@ -1,16 +1,30 @@
-//Tutorial: https://developer.fyne.io/tour/introduction/
 package main
 
+//Tutorial: https://developer.fyne.io/tour/basics/windows.html
+
 import (
+	"fmt"
+
 	"fyne.io/fyne/app"
 	"fyne.io/fyne/widget"
 )
 
 func main() {
-	app := app.New()
+	myApp := app.New()
+	myWindow := myApp.NewWindow("Hello")
+	myWindow.SetContent(widget.NewLabel("Hello"))
 
-	w := app.NewWindow("Hello")
-	w.SetContent(widget.NewLabel("Hello Fyne!"))
+	secWindow := myApp.NewWindow("Hello again!!")
+	secWindow.SetContent(widget.NewLabel("HAIII"))
 
-    w.ShowAndRun()
+	myWindow.Show()
+	secWindow.Show()
+	myApp.Run()
+	tidyUp()
 }
+
+func tidyUp() {
+	fmt.Println("Exited")
+}
+
+func first_window()

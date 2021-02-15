@@ -4,27 +4,35 @@ package main
 
 import (
 	"fmt"
+	//"time"
 
-	"fyne.io/fyne/app"
-	"fyne.io/fyne/widget"
+	//"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/widget"
+	//"fyne.io/fyne/v2/canvas"
+	//"fyne.io/fyne/v2/theme"
 )
 
 func main() {
+	main_window()
+	tidyUp()
+}
+
+func main_window() {
 	myApp := app.New()
 	myWindow := myApp.NewWindow("Hello")
-	myWindow.SetContent(widget.NewLabel("Hello"))
+	myWindow.SetContent(widget.NewLabel("Hello World!"))
 
-	secWindow := myApp.NewWindow("Hello again!!")
-	secWindow.SetContent(widget.NewLabel("HAIII"))
+	// show and run the application
+	myWindow.ShowAndRun()
+	//ShowANdRUn is short version
+	//myApp.Run()
 
-	myWindow.Show()
-	secWindow.Show()
-	myApp.Run()
-	tidyUp()
 }
 
 func tidyUp() {
 	fmt.Println("Exited")
 }
 
-func first_window()
+//func first_window()
+
